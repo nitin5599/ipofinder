@@ -14,10 +14,10 @@ import {
   Text,
   View,
 } from 'react-native';
-import { Home, SME, Mainline, News, Offers } from "./screens";
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
-
+import { Home, SME, Mainline, News, Offers, Detail } from "./screens";
+import { createStackNavigator, } from "@react-navigation/stack";
+import { NavigationContainer, DefaultTheme,  } from '@react-navigation/native';
+// import {   } from 'react-native-shared-element';
 import Tabs from "./navigation/tabs";
 
 const theme = {
@@ -31,11 +31,8 @@ const theme = {
 const Stack = createStackNavigator();
 
 const App = () => {
-
-
   return (
-      <>
-     
+      <>     
         <NavigationContainer theme={theme}>
           <Stack.Navigator
               screenOptions={{
@@ -44,10 +41,14 @@ const App = () => {
               initialRouteName={'Home'}
           >
             {/* Tabs */}
-            <Stack.Screen name="Tabs" component={Tabs}/>              
+            <Stack.Screen name="Tabs" component={Tabs}/>          
+            <Stack.Screen 
+              name="Detail" 
+              component={Detail}
+              
+            />              
           </Stack.Navigator>
-        </NavigationContainer>  
-  
+        </NavigationContainer>    
       </>
   )
 }
